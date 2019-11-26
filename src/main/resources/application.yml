@@ -1,11 +1,7 @@
 # 全局配置
 
-# 注意：本项目中仅包含 Spring Profile
-
-### Gradle 有其灵活的构建方式，不需要对应 Maven Profile 的使用习惯。因此本项目实际只有一套 Spring Profile，勿混淆。
-
-## Spring Profile 在 Java/Kotlin 代码中的用法：使用Spring注解： @Profile("staging")
-
 spring:
+  application:
+    name: demo
   profiles:
     active: dev
