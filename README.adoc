@@ -32,10 +32,10 @@ spring-boot-boilerplate-kotlin
     │  │                  DemoApplication.kt
     │  │                  
     │  └─resources
-    │      │  application-dev.yml
-    │      │  application-production.yml
-    │      │  application-staging.yml
-    │      │  application.yml
+    │      │  application-dev.yaml
+    │      │  application-production.yaml
+    │      │  application-staging.yaml
+    │      │  application.yaml
     │      │  logback-spring.xml
     │      │  logback-spring.xml.aliyun.example
     │      │  logback-spring.xml.file.example
@@ -70,7 +70,7 @@ spring-boot-boilerplate-kotlin
 * 包含一个基本的 `README.adoc` 自述文件，以便参考 AsciiDoc 语法
 ** AsciiDoc 兼容 Markdown 语法，可在 `adoc` 中直接写 Markdown
 
-* 配置文件使用YAML （ `application.yml` 取代 `application.properties` ）
+* 配置文件使用YAML （ `application.yaml` 取代 `application.properties` ）
 
 * 项目配置集
 ** 三个 Spring Profile: `dev`, `staging`, `production`
