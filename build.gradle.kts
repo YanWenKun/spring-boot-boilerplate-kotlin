@@ -15,7 +15,7 @@ plugins {
     kotlin("plugin.spring") version "1.3.60"
 }
 
-// 指定工程信息
+// 项目工程信息
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
@@ -31,12 +31,12 @@ configurations {
 // 使用阿里云的 Maven 源，以加速下载
 // 一般情况下，不建议在本地 Gradle 中进行全局配置，分项目配置即可
 repositories {
-    maven("https://maven.aliyun.com/repository/public")
+    maven("https://maven.aliyun.com/repository/central")
+    maven("https://maven.aliyun.com/repository/jcenter")
     maven("https://maven.aliyun.com/repository/gradle-plugin")
     maven("https://maven.aliyun.com/repository/spring")
     maven("https://maven.aliyun.com/repository/spring-plugin")
     maven("https://maven.aliyun.com/repository/google")
-    maven("https://repository.aspose.com/repo/")
     mavenLocal()
     mavenCentral()
     jcenter()
