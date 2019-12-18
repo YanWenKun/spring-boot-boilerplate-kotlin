@@ -64,8 +64,8 @@ spring-boot-boilerplate-kotlin
 ** 一个通用的 `.gitattributes` 文件（规定 git 对文本格式的处理）
 ** 为空目录添加 `.gitkeep` 文件（0字节，仅占位，避免空目录被忽略）
 
-* 在 `build.gradle.kts` 中配置了镜像源（阿里云Maven）
-** Gradle 的 CDN 在中国大陆已经很快了，因此没有单独配置
+* Gradle Wrapper 的 CDN 在中国大陆已经很快了，因此没有单独配置
+** 为本地 Gradle 全局配置 Maven 镜像源，请参照 <<配置 Maven 镜像源>> 进行配置。
 
 * 包含一个基本的 `README.adoc` 自述文件，以便参考 AsciiDoc 语法
 ** AsciiDoc 兼容 Markdown 语法，可在 `adoc` 中直接写 Markdown
@@ -224,3 +224,24 @@ export SPRING_PROFILES_ACTIVE=production
 ** 为 `8` 和 `11` 提供长期支持
 
 如果你感到选择困难，请使用 https://adoptopenjdk.net/?variant=openjdk11&jvmVariant=hotspot[AdoptOpenJDK11+HotSpot] 。
+
+== 配置 Maven 镜像源
+
+在中国大陆访问 Maven 官方源一般会很慢，建议使用镜像源。
+
+* 不推荐直接在 `build.gradle.kts` 中配置仓库来源
+** 如果是开源项目，会影响身处国外的开发者
+** 不利于 CI 的管理
+
+如何为本地 Gradle 全局配置 Maven 镜像源：
+
+将 link:docs/init.gradle.kts[init.gradle.kts] 复制到【 用户主目录/.gradle/ 】下。
+或执行命令：
+
+[source,sh]
+----
+mkdir ~/.gradle/
+cp docs/init.gradle.kts ~/.gradle/
+----
+
+该配置对运行在本地的 Gradle、Gradle Wrapper 均有效。

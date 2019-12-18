@@ -28,18 +28,10 @@ configurations {
     }
 }
 
-// 使用阿里云的 Maven 源，以加速下载
-// 一般情况下，不建议在本地 Gradle 中进行全局配置，分项目配置即可
+// 软件仓库地址，默认 Maven 中央库
+// 如需配置镜像，建议本地配置，勿入项目配置
 repositories {
-    maven("https://maven.aliyun.com/repository/central")
-    maven("https://maven.aliyun.com/repository/jcenter")
-    maven("https://maven.aliyun.com/repository/gradle-plugin")
-    maven("https://maven.aliyun.com/repository/spring")
-    maven("https://maven.aliyun.com/repository/spring-plugin")
-    maven("https://maven.aliyun.com/repository/google")
-    mavenLocal()
     mavenCentral()
-    jcenter()
 }
 
 // 指定项目依赖
