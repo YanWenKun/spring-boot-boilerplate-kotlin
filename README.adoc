@@ -245,3 +245,7 @@ cp docs/mirrors.init.gradle.kts ~/.gradle/init.d/
 ----
 
 该配置对运行在本地的 Gradle、Gradle Wrapper 均有效。
+
+== 许可
+
+使用与 https://github.com/spring-projects/spring-boot[Spring Boot] 一致的 Apache License 2.0 许可。
