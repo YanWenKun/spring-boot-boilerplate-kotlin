@@ -235,13 +235,13 @@ export SPRING_PROFILES_ACTIVE=production
 
 如何为本地 Gradle 全局配置 Maven 镜像源：
 
-将 link:docs/mirrors.init.gradle.kts[mirrors.init.gradle.kts] 复制到【 用户主目录/.gradle/init.d/ 】下。
+将 link:docs/gradle/mirrors.init.gradle.kts[mirrors.init.gradle.kts] 复制到【 用户主目录/.gradle/init.d/ 】下。
 或执行命令：
 
 [source,sh]
 ----
 mkdir ~/.gradle/init.d/
-cp docs/mirrors.init.gradle.kts ~/.gradle/init.d/
+cp docs/gradle/mirrors.init.gradle.kts ~/.gradle/init.d/
 ----
 
 该配置对运行在本地的 Gradle、Gradle Wrapper 均有效。
