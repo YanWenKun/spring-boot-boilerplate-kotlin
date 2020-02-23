@@ -1,12 +1,12 @@
 /*
- * 如何创建Gradle构建： https://guides.gradle.org/creating-new-gradle-builds
- * 查看Spring官方教程： https://spring.io/guides/tutorials/spring-boot-kotlin/#use-gradle
+ * 如何创建 Gradle 构建： https://guides.gradle.org/creating-new-gradle-builds
+ * 查看 Spring 官方教程： https://spring.io/guides/tutorials/spring-boot-kotlin/#use-gradle
  * 编辑整理： yanwenkun@foxmail.com
  */
 
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-// 编译器插件
+// Gradle 插件
 plugins {
     id("org.springframework.boot") version "2.2.4.RELEASE"
     id("io.spring.dependency-management") version "1.0.9.RELEASE"
