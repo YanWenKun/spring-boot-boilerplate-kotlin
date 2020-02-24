@@ -22,7 +22,7 @@ COPY --chown=gradle \
 # 先让 Gradle 下载部分依赖，有利于 Docker 缓存
 WORKDIR /build
 COPY *.gradle.kts ./
-RUN gradle buildEnvironment --no-daemon --quiet
+RUN gradle buildEnvironment dependencies --no-daemon --quiet
 
 # 编译项目
 COPY src ./src
