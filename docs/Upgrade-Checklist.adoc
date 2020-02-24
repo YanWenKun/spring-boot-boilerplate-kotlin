@@ -1,0 +1,98 @@
+:toc:
+:toc-title: 目录
+:toc-placement!:
+:author: YAN Wenkun
+:email: yanwenkun@foxmail.com
+
+= 版本升级清单
+
+该清单记录在 DevOps 中不能自动化更新／升级的条目，尤其是手动管理的软件依赖项。
+
+toc::[]
+
+.用语规范
+****
+* update： 更新，反义词为 roll-back。例如：更新文档，更新链接。
+* upgrade： 升级，反义词为 downgrade。例如：升级到 Spring Boot 2.3.x。
+****
+
+== 制品版本
+
+.build.gradle.kts
+[source,kts]
+----
+group = "com.example"
+version = "0.0.1-SNAPSHOT"
+----
+
+== 软件依赖
+
+=== Spring Boot
+
+.build.gradle.kts
+[source,kts]
+----
+plugins {
+    id("org.springframework.boot") version "2.2.4.RELEASE"
+    id("io.spring.dependency-management") version "1.0.9.RELEASE"
+    kotlin("jvm") version "1.3.61"
+    kotlin("plugin.spring") version "1.3.61"
+}
+----
+
+最新版本参考： https://start.spring.io/
+
+TIP: 对企业开发建议的升级策略：如无新特性需求，可以选择保守升级，落后一个中版本。比如当前主干版本是 `2.2`，可以选择 `2.1` 分支中最新的。但尽量做事前调研，不要盲目迷信保守版本。
+
+=== JDK
+
+.build.gradle.kts
+[source,kts]
+----
+java.sourceCompatibility = JavaVersion.VERSION_1_8
+// ...
+tasks.withType<KotlinCompile> {
+    kotlinOptions {
+        freeCompilerArgs = listOf("-Xjsr305=strict")
+        jvmTarget = "1.8"
+    }
+}
+----
+
+.Dockerfile
+[source,Dockerfile]
+----
+ARG BUILDER_IMAGE=gradle:jdk8
+ARG RUNNER_IMAGE=adoptopenjdk:8-jre-openj9
+----
+
+TIP: 未来更新到 JDK 11 或 17 可能会有较大影响，如遇到问题，建议逐个大版本号下降式排查。
+
+=== Gradle Wrapper
+
+.gradle-wrapper.properties
+[source,properties]
+----
+distributionUrl=https\://services.gradle.org/distributions/gradle-6.2-bin.zip
+----
+
+== 文档更新
+
+检查文档中是否有需要同步更新的内容：
+
+* link:../README.adoc[README.doc]
+* link:Upgrade-Checklist.adoc[Upgrade-Checklist.adoc]
+
+TIP: 本文档为了兼容 GitHub 显示，并未使用 AsciiDoc 的引用功能，所有代码片段均为静态文本。
+
+== 工程准备
+
+. 测试环境与日志记录
+. 回滚策略
+. 升级目标、内容与方式
+. 新特性清单，重大改动项
+. 升级路径与流程
+. 复查配置
+. 复查升级历史
+. 测试
+. 通知并记录文档
