@@ -44,6 +44,8 @@ WORKDIR /app
 # OpenJ9 JVM 容器环境优化参数 https://developer.ibm.com/technologies/java/articles/optimize-jvm-startup-with-eclipse-openjj9/
 ENV JAVA_OPTS="-Xshareclasses -Xtune:virtualized"
 
+ENV SPRING_PROFILES_ACTIVE=RELEASE
+
 EXPOSE 8080/tcp
 
 COPY --from=buildingStage /build/build/libs/*.jar app.jar
