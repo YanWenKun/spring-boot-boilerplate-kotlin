@@ -19,14 +19,14 @@ COPY --chown=gradle \
     docs/Gradle/mirrors.init.gradle.kts \
     /home/gradle/.gradle/init.d/mirrors.init.gradle.kts
 
-# 编译项目
-## 注意 Gradle 并不原生支持像 Maven 一样预先解析并下载依赖，因此无法充分利用 Docker 分层缓存。
-## 实际上，Gradle 的思路是反过来的，不是 Docker 利用它，而是它利用 Docker，由 Gradle 来构建 Docker 镜像。
-## 这里不对此进行评价。
+# 先让 Gradle 下载部分依赖，有利于 Docker 缓存
 WORKDIR /build
 COPY *.gradle.kts ./
+RUN gradle buildEnvironment --no-daemon --quiet
+
+# 编译项目
 COPY src ./src
-RUN gradle bootJar --no-daemon
+RUN gradle bootJar --no-daemon --quiet
 
 # ===============================================
 
