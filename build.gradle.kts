@@ -1,7 +1,7 @@
 /*
  * 如何创建 Gradle 构建： https://guides.gradle.org/creating-new-gradle-builds
  * 查看 Spring 官方教程： https://spring.io/guides/tutorials/spring-boot-kotlin/#use-gradle
- * 编辑整理： yanwenkun@foxmail.com
+ * 编辑整理： code@yanwk.fun
  */
 
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
