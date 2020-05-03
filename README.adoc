@@ -16,6 +16,8 @@
 文件目录结构：
 
 ----
+spring-boot-boilerplate-kotlin
+│  .editorconfig
 │  .gitattributes
 │  .gitignore
 │  build.gradle.kts
@@ -81,6 +83,9 @@
 ** 一个通用的 `.gitignore` 文件（规定 git 自动忽略哪些文件）
 ** 一个通用的 `.gitattributes` 文件（规定 git 对文本格式的处理）
 ** 为空目录添加 `.gitkeep` 文件（0字节，仅占位，避免空目录被忽略）
+
+* 编辑器行为配置
+** 以 `.editorconfig` 文件来规范字符编码、行尾、文件末尾、缩进格式等
 
 * Gradle Wrapper 的 CDN 在中国大陆已经很快了，因此没有单独配置
 ** 为本地 Gradle 全局配置 Maven 镜像源，请参照 <<配置 Gradle 使用 Maven 镜像源>> 进行配置。
