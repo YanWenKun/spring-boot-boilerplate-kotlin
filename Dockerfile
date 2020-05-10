@@ -2,8 +2,8 @@
 # 请在编写完成后使用 Linter 检查： https://hadolint.github.io/hadolint/
 
 # 使用分阶段构建，编译环境一个镜像，运行环境一个镜像
-ARG BUILDER_IMAGE=gradle:jdk8
-ARG RUNNER_IMAGE=adoptopenjdk:8-jre-openj9
+ARG BUILDER_IMAGE=gradle:jdk11
+ARG RUNNER_IMAGE=adoptopenjdk:11-jre-openj9
 
 # ===============================================
 

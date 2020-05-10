@@ -49,7 +49,7 @@ TIP: 对企业开发建议的升级策略：如无新特性需求，可以选择
 .build.gradle.kts
 [source,kts]
 ----
-java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.sourceCompatibility = JavaVersion.VERSION_11
 // ...
 tasks.withType<KotlinCompile> {
     kotlinOptions {
@@ -62,11 +62,11 @@ tasks.withType<KotlinCompile> {
 .Dockerfile
 [source,Dockerfile]
 ----
-ARG BUILDER_IMAGE=gradle:jdk8
-ARG RUNNER_IMAGE=adoptopenjdk:8-jre-openj9
+ARG BUILDER_IMAGE=gradle:jdk11
+ARG RUNNER_IMAGE=adoptopenjdk:11-jre-openj9
 ----
 
-TIP: 未来更新到 JDK 11 或 17 可能会有较大影响，如遇到问题，建议逐个大版本号下降式排查。
+TIP: 未来更新到 JDK 17 可能会有较大影响，如遇到问题，建议逐个大版本号下降式排查。
 
 === Gradle Wrapper
 

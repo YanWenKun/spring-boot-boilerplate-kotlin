@@ -18,7 +18,7 @@ plugins {
 // 项目工程信息
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.sourceCompatibility = JavaVersion.VERSION_11
 
 // 为 Spring Boot DevTools 依赖指定“仅开发时”
 val developmentOnly by configurations.creating
