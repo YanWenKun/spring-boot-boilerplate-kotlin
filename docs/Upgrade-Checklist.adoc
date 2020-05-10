@@ -73,7 +73,7 @@ TIP: 未来更新到 JDK 11 或 17 可能会有较大影响，如遇到问题，
 .gradle-wrapper.properties
 [source,properties]
 ----
-distributionUrl=https\://services.gradle.org/distributions/gradle-6.3-bin.zip
+distributionUrl=https\://services.gradle.org/distributions/gradle-6.4-bin.zip
 ----
 
 == 文档更新
