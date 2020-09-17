@@ -8,11 +8,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 // Gradle 插件
 plugins {
-    id("org.springframework.boot") version "2.3.0.RELEASE"
-    id("io.spring.dependency-management") version "1.0.9.RELEASE"
+    id("org.springframework.boot") version "2.3.4.RELEASE"
+    id("io.spring.dependency-management") version "1.0.10.RELEASE"
     // 这里的 Kotlin 版本号是 Spring 的保险设计，标准 Kotlin 项目会由 plugin 自动管理版本，不需要一个一个写
-    kotlin("jvm") version "1.3.72"
-    kotlin("plugin.spring") version "1.3.72"
+    kotlin("jvm") version "1.4.10"
+    kotlin("plugin.spring") version "1.4.10"
 }
 
 // 项目工程信息
@@ -48,6 +48,6 @@ tasks.withType<Test> {
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict") // 开启Kotlin null安全特性（编译期检查）
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 }
