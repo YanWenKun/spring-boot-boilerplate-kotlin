@@ -13,7 +13,7 @@ toc::[]
 .用语规范
 ****
 * update： 更新，反义词为 roll-back。例如：更新文档，更新链接。
-* upgrade： 升级，反义词为 downgrade。例如：升级到 Spring Boot 2.3.x。
+* upgrade： 升级，反义词为 downgrade。例如：升级到 Spring Boot 2.4.x。
 ****
 
 == 制品版本
@@ -33,10 +33,10 @@ version = "0.0.1-SNAPSHOT"
 [source,kts]
 ----
 plugins {
-    id("org.springframework.boot") version "2.3.4.RELEASE"
+    id("org.springframework.boot") version "2.4.1"
     id("io.spring.dependency-management") version "1.0.10.RELEASE"
-    kotlin("jvm") version "1.4.10"
-    kotlin("plugin.spring") version "1.4.10"
+    kotlin("jvm") version "1.4.21"
+    kotlin("plugin.spring") version "1.4.21"
 }
 ----
 
@@ -73,7 +73,7 @@ TIP: 未来更新到 JDK 17 可能会有较大影响，如遇到问题，建议�
 .gradle-wrapper.properties
 [source,properties]
 ----
-distributionUrl=https\://services.gradle.org/distributions/gradle-6.6.1-bin.zip
+distributionUrl=https\://services.gradle.org/distributions/gradle-6.7.1-bin.zip
 ----
 
 == 文档更新
